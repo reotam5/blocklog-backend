@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { join } from 'path';
+import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 
 @Module({
@@ -17,6 +18,7 @@ import { UserModule } from './user/user.module';
       plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
     }),
     UserModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
